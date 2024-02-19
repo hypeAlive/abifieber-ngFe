@@ -5,6 +5,7 @@ import { routes } from './app.routes';
 import {ModalModule} from "ngx-bootstrap/modal";
 import {BrowserModule} from "@angular/platform-browser";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {HttpClientModule} from "@angular/common/http";
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -12,7 +13,8 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(
       BrowserModule,
       BrowserAnimationsModule,
-      ModalModule.forRoot()
+      ModalModule.forRoot(),
+      HttpClientModule
     )
   ]
 };

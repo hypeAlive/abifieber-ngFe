@@ -1,6 +1,9 @@
 import {Component, TemplateRef} from '@angular/core';
 import {BsModalRef, BsModalService} from "ngx-bootstrap/modal";
 import {BsDropdownModule} from "ngx-bootstrap/dropdown";
+import {DataService} from "./shared/data.service";
+
+type UserData = {}
 
 @Component({
   selector: 'app-root',
@@ -16,9 +19,14 @@ export class AppComponent {
 
   protected modalRef: BsModalRef | undefined;
 
-  constructor(private modalService: BsModalService) {}
+  constructor(private modalService: BsModalService, private dataService: DataService) {
+  }
 
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
+
+    this.dataService.getUserData().subscribe((data: UserData[]) => {
+      console.log(data);
+    });
   }
 }
