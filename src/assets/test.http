@@ -1,0 +1,8 @@
+POST https://onlyjosh.de/api/user
+Content-Type: application/json
+
+{
+  "firstname": "432432",
+  "lastname": "234423",
+  "email": "234234"
+}

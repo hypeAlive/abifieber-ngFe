@@ -12,7 +12,12 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  public getUserData():Observable<User[]> {
+  public getUsers():Observable<User[]> {
     return this.http.get<User[]>(DataService.API_URL + "/user");
   }
+
+  public createUser(user: User): Observable<User> {
+    return this.http.post<User>(DataService.API_URL + "/user", user);
+  }
+
 }
