@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {User} from "./user.types";
+import {User, UserCreation} from "./user.types";
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,7 @@ export class DataService {
     return this.http.get<User[]>(DataService.API_URL + "/user");
   }
 
-  public createUser(user: User): Observable<User> {
+  public createUser(user: UserCreation): Observable<User> {
     return this.http.post<User>(DataService.API_URL + "/user", user);
   }
 

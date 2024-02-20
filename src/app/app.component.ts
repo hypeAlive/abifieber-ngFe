@@ -2,7 +2,7 @@ import {Component, TemplateRef} from '@angular/core';
 import {BsModalRef, BsModalService} from "ngx-bootstrap/modal";
 import {BsDropdownModule} from "ngx-bootstrap/dropdown";
 import {DataService} from "./shared/data.service";
-import {User} from "./shared/user.types";
+import {User, UserCreation} from "./shared/user.types";
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 
 @Component({
@@ -31,6 +31,7 @@ export class AppComponent {
 
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
+
   }
 
   onSubmit() {
